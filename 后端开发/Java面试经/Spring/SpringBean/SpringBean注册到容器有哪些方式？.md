@@ -6,34 +6,36 @@
 
 这是最常用的方式，使用注解标识类，让Spring自动扫描并注册这些类为Bean。
 
-- **@Component**：通用组件注解，适用于任何需要注册为Bean的类。
+**@Component**：通用组件注解，适用于任何需要注册为Bean的类。
 
-  - ```Java
-    @Component
-    public class MyComponent {
-        // 逻辑代码
-    }
-    ```
+```java
+@Component
+public class MyComponent {
+    // 逻辑代码
+}
+```
 
-- **@Service**：用于标识服务层的Bean。
+**@Service**：用于标识服务层的Bean。
 
-  - ```Java
-    @Service
-    public class MyService {
-        // 逻辑代码
-    }
-    ```
+```java
+@Service
+public class MyService {
+  
+  
+    // 逻辑代码
+}
+```
 
-- **@****Repository**：用于标识数据访问层（DAO）的Bean，并提供与持久化相关的异常转换机制。
+**@****Repository**：用于标识数据访问层（DAO）的Bean，并提供与持久化相关的异常转换机制。
 
-  - ```Java
-    @Repository
-    public class MyRepository {
-        // 数据访问逻辑
-    }
-    ```
+```java
+@Repository
+public class MyRepository {
+    // 数据访问逻辑
+}
+```
 
-- **@****Controller**：用于标识控制层（如MVC控制器）的Bean，处理HTTP请求。
+**@****Controller**：用于标识控制层（如MVC控制器）的Bean，处理HTTP请求。
 
 ```Java
 @Controller
@@ -42,7 +44,7 @@ public class MyController {
 }
 ```
 
-- **@RestController**：`@Controller`的组合注解，用于构建RESTful Web服务。
+**@RestController**：`@Controller`的组合注解，用于构建RESTful Web服务。
 
 ```Java
 @RestController
@@ -69,21 +71,21 @@ public class AppConfig {
 
 - **Java配置类**：
 
-  - ```Java
-    @Configuration
-    public class AppConfig {
-    
-        @Bean
-        public MyService myService() {
-            return new MyService();
-        }
-    
-        @Bean
-        public MyRepository myRepository() {
-            return new MyRepository();
-        }
+```java
+@Configuration
+public class AppConfig {
+
+    @Bean
+    public MyService myService() {
+        return new MyService();
     }
-    ```
+
+    @Bean
+    public MyRepository myRepository() {
+        return new MyRepository();
+    }
+}
+```
 
 这种方式特别适合需要手动控制Bean的创建逻辑或配置复杂依赖的场景。
 
